@@ -1,0 +1,33 @@
+-- Modules --
+  1. Creating a module
+    - go mod init [name of module]
+    - [name-of-module] naming conventions:
+      * if you ever plan of publicizing your code, with the URL to the repository is often necessary
+      * Lets say I perform: go mod init github.com/Ares1605/go-learning-projs.
+      * When someone performs go get github.com/Ares1605/go-learning-projs,
+        golang knows to hit the URL and check for a public repo.
+      * If a proper repo is found, it's able to download it for their own use!
+    - you must have a valid go.mod file in the root directory of the module
+-- Packages --
+  1. Creating a package
+    - Naming conventions:
+      1. While not strictly enforced, packages should be all lowercase
+        Simply concat multiple words (ex. filepath), without snake_case or camelCase
+      2. Choose concise names, don't be over descriptive
+    - Declaring a package
+       1. `package [packagename]` must be the first executable command of a go file
+       2. [packagename] must be unique to the directory, or it will not compile
+  2. Private/public identifiers (functions, types, variables)
+    - A public identifier is declared with a capitalized name
+      * These identifiers will be exported for other packages
+    - A private identifier is declared with a non-caps name
+  3. Main package
+    - `package main` declares the main package
+    - This is the entry point of a module
+    - A main package is required in order to compile the module,
+      however modules designed to be used as libraries or packages
+      do not need a main package
+  4. Package structure
+    - go expects one package per directory
+    - it's typical naming convention to name the pacakge as the folders name,
+      however it's not strictly enforced
